@@ -1,9 +1,7 @@
 import time
 import threading
+from config import N, te, p
 
-N = 25
-te = 0.1
-p = 1.0
 
 def tarea(i, te=te, p=p):
     t_paralelo = te * p
@@ -29,7 +27,3 @@ def ejecutar_threading(n_workers):
     fin = time.time()
     return fin - inicio
 
-if __name__ == "__main__":
-    workers = 4
-    tiempo = ejecutar_threading(workers)
-    print(f"Tiempo con threading ({workers} workers): {tiempo:.4f} segundos")

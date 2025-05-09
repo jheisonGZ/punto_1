@@ -1,9 +1,8 @@
 import time
 
 # Configuración
-N = 25
-te = 0.1
-p = 1.0  # Fracción paralelizable
+from config import N, te, p
+
 
 def tarea(i, te=te, p=p):
     t_paralelo = te * p
@@ -18,6 +17,4 @@ def ejecutar_serial():
     fin = time.time()
     return fin - inicio
 
-if __name__ == "__main__":
-    tiempo = ejecutar_serial()
-    print(f"Tiempo de ejecución serial: {tiempo:.4f} segundos")
+
